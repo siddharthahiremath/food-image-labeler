@@ -9,11 +9,19 @@ This project provides functionality to:
 
 1. Install required dependencies:
 ```bash
-pip install opencv-python openai google-auth-oauthlib google-auth-httplib2 google-api-python-client
+pip install opencv-python openai google-auth-oauthlib google-auth-httplib2 google-api-python-client python-dotenv
 ```
 
-2. Set up API credentials:
-   - OpenAI API key
+2. Set up environment variables:
+   - Copy `.env.example` to `.env`
+   - Add your OpenAI API key and Gmail configuration
+   ```bash
+   cp .env.example .env
+   # Edit .env with your credentials
+   ```
+
+3. Set up API credentials:
+   - OpenAI API key (in .env file)
    - Google OAuth credentials (credentials.json)
 
 ## Usage
@@ -39,8 +47,9 @@ set_reminder("your_email@example.com", "Reminder message", "10:00")
 
 ## Security Note
 - Keep your API keys and credentials secure
-- Never commit sensitive files like `token.json` or `credentials.json`
+- Never commit sensitive files like `token.json`, `credentials.json`, or `.env`
 - Use environment variables for API keys in production
+- The `.env.example` file shows what environment variables are needed
 
 ## License
 MIT 
